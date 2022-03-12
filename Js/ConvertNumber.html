@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .center{
+        text-align: center;
+    }
+    .list{
+        align-items: center;
+        text-align: center;
+        display: inline;
+    }
+</style>
+<body>
+
+<h1 class="center">JavaScript Convert reversed number into a array</h5>
+
+<p class="center">Methods<br />
+  <ul class="list">   
+    <li><code>Array.from()</code></li>
+    <li><code>num.toString()</code></li>
+    <li><code>num.reverse()</code></li>
+    <li><code>num.map()</code></li>
+    <li><code>num.split('')</code></li>
+  </ul> 
+</p>
+
+<div class="center"><p> Test Number:  123 </p>
+  <br />
+  <h5> First way:
+    <code> Array.from(String(num), Number).reverse();</code>
+    <p id="test"></p>
+  </h5>
+  <br />
+  <h5> Second way:
+    <code> String(num).split('').map(Number).reverse();</code>
+    <p id="2test"></p>
+  </h5>
+  <br />
+  <h5> Third way:
+    <code> (num + '').split('').map(Number).reverse();</code>
+    <p id="3test"></p>
+  </h5>
+</div>
+
+<script>
+let num = 123;
+function digitize(num) {
+    return arrConvert = Array.from(String(num), Number).reverse();
+}
+
+//other way:
+function digitize(num) {
+    return String(num).split('').map(Number).reverse();
+}
+
+//third way:
+function digitize(num){
+    return (num + '').split('').map(Number).reverse();
+}
+
+document.getElementById("test").innerHTML = Array.from(String(num), Number).reverse();
+document.getElementById("2test").innerHTML = String(num).split('').map(Number).reverse();
+document.getElementById("3test").innerHTML = (num + '').split('').map(Number).reverse();
+</script>
+
+</body>
+</html>
