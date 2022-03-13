@@ -15,3 +15,8 @@ function digitize(num) {
 function digitize(num){
     return (num + '').split('').map(Number).reverse();
 }
+
+
+// Solituion by Akar-0
+
+digitize=n=>[...n.toString()].reverse().map(Number)
