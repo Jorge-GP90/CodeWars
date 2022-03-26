@@ -7,7 +7,23 @@ Write a function that will take the number of petals of each flower and return t
 
 */
 
+function lovefunc(flower1, flower2) {
+  return flower1 % 2 == 0 && flower2 % 2 != 0
+    ? true
+    : flower2 % 2 == 0 && flower1 % 2 != 0
+    ? true
+    : false;
+}
+console.log(lovefunc(10, 11));
 
-function lovefunc(flower1, flower2){
-  // moment of truth
+// second way
+
+function lovefunc2(flower1, flower2) {
+  return flower1 % 2 !== flower2 % 2;
+}
+
+// third way
+
+function lovefunc3(flower1, flower2) {
+  return (flower1 + flower2) % 2 === 1;
 }
