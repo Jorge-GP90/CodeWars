@@ -12,5 +12,30 @@ Your points are not included in the array of your class's points. For calculatin
 */
 
 function betterThanAverage(classPoints, yourPoints) {
-  // Your code here
+  let averagePoints = 0;
+  classPoints.push(yourPoints);
+  for (let i = 0; i < classPoints.length; i++) {
+    averagePoints += classPoints[i];
+  }
+  const totalAverage = averagePoints / classPoints.length;
+  return yourPoints > totalAverage ? true : false;
+}
+
+console.log(betterThanAverage([2, 3], 5));
+
+// Second way
+
+function betterThanAverage(classPoints, yourPoints) {
+  return (
+    yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length
+  );
+}
+
+//   third way
+
+function betterThanAverage(classPoints, yourPoints) {
+  const classPointsSum = classPoints.reduce((a, b) => a + b, 0);
+  const classAverage = classPointsSum / classPoints.length;
+  const isBetter = yourPoints > classAverage;
+  return isBetter;
 }
