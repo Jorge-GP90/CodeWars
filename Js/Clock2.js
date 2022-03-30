@@ -21,23 +21,26 @@ Input constraints:
 
 function past(h, m, s) {
   let miliSecondsPast = 0;
+  if (h === 0 && m === 0 && s === 0) {
+    miliSecondsPast = 0;
+  }
   if (0 <= h <= 23) {
     if (0 <= m <= 59) {
       if (0 <= s <= 59) {
-        miliSecondsPast = h * m * s * 1000;
+        miliSecondsPast = (h * 24 + m * 60 + s) * 1000;
       }
-      miliSecondsPast = h * m * 1000;
+      miliSecondsPast = (h * 24 + m * 60) * 1000;
     }
     if (0 <= s <= 59) {
-      miliSecondsPast = h * s * 1000;
+      miliSecondsPast = (h * 24 + s) * 1000;
     }
-    miliSecondsPast = h * 1000;
+    miliSecondsPast = h * 24 * 1000;
   }
   if (0 <= m <= 59) {
     if (0 <= s <= 59) {
-      miliSecondsPast = m * s * 1000;
+      miliSecondsPast = (m * 60 + s) * 1000;
     }
-    miliSecondsPast = m * 1000;
+    miliSecondsPast = m * 60 * 1000;
   }
   if (0 <= s <= 59) {
     miliSecondsPast = s * 1000;
