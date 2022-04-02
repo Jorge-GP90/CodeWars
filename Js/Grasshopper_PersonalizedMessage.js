@@ -1,4 +1,3 @@
-
 // Grasshopper - Personalized Message
 
 /*
@@ -13,6 +12,21 @@ otherwise	'Hello guest'
 
 */
 
-function greet (name, owner) {
-  // Add code here
+function greet(name, owner) {
+  return name === owner ? "Hello boss" : "Hello guest";
+}
+
+// Second Way
+
+function greet(name, owner) {
+  return `Hello ${name == owner ? "boss" : "guest"}`;
+}
+
+// third way
+
+const greet = (name, owner) => (name == owner ? "Hello boss" : "Hello guest");
+
+// fourth way
+function greet(name, owner) {
+  return "Hello " + (name == owner ? "boss" : "guest");
 }
