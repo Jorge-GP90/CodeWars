@@ -8,4 +8,18 @@ current age of his son (years)
 
 */
 
-function twiceAsOld(dadYearsOld, sonYearsOld) {}
+// First solution
+const twiceAsOld = (dadYearsOld, sonYearsOld) => {
+  return Math.abs(dadYearsOld - sonYearsOld * 2);
+};
+
+console.log(twiceAsOld(29, 0));
+
+// Second Way
+
+function twiceAsOld(a, b) {
+  return a > 2 * b ? a - 2 * b : 2 * b - a;
+}
+
+//   third way
+const twiceAsOld = (d, s) => Math.abs(d - 2 * s);
