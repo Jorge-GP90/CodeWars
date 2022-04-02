@@ -10,8 +10,37 @@ You can assume that all values are integers. Do not mutate the input array/list.
 
 */
 
+// First try
 function invert(array) {
+  let invert = [];
   if (array === []) return (array = []);
-  return array.map().pow(-1);
+  for (const x of array) {
+    invert.push(x * -1);
+  }
+  return invert;
 }
-console.log([1, 2, 3, 4, 5]);
+console.log(invert([1, 2, 3, 4, 5]));
+
+// Second way
+
+function invert(array) {
+  return array.map((x) => (x === 0 ? x : -x));
+}
+
+//  third way
+
+function invert(array) {
+  return array.map((i) => 0 - i);
+}
+
+//  fourth way
+const invert = (array) => array.map((num) => -num);
+
+// fifth way
+function invert(array) {
+  var newArr = [];
+  for (var i = 0; i < array.length; i++) {
+    newArr.push(-array[i]);
+  }
+  return newArr;
+}

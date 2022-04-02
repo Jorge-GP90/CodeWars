@@ -15,6 +15,26 @@ countBy(2,5) === [2,4,6,8,10]
 
 function countBy(x, n) {
   let z = [];
-
+  for (let i = 1; i <= n; i++) {
+    z.push(x * (i === 0 ? 1 : i < n ? i : n));
+  }
   return z;
 }
+console.log(countBy(2, 5));
+
+// Second Way
+
+function countBy(x, n) {
+  var z = [];
+  for (i = 1; i <= n; i++) {
+    z.push(x * i);
+  }
+  return z;
+}
+
+// third way
+const countBy = (x, n) => Array.from({ length: n }, (v, k) => (k + 1) * x);
+
+// fourth way
+
+const countBy = (x, n) => [...Array(n)].map((_, idx) => ++idx * x);
