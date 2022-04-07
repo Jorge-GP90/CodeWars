@@ -42,3 +42,10 @@ function findMultiples3(int, limit) {
 
 const findMultiples = (integer, limit) =>
   [...Array((limit / integer) ^ 0)].map((_, idx) => ++idx * integer);
+
+//   Other way
+
+var findMultiples = (integer, limit) =>
+  [...Array(Math.floor(limit / integer) + 1).keys()]
+    .map((e) => e * integer)
+    .slice(1);
