@@ -21,25 +21,39 @@ Note: All math operations will be: a (operation) b
 */
 
 function add(a, b) {
-  return;
+  return a + b;
 }
 
 function divide(a, b) {
-  return;
+  return a / b;
 }
 
 function multiply(a, b) {
-  return;
+  return a * b;
 }
 
 function mod(a, b) {
-  return;
+  return a % b;
 }
 
 function exponent(a, b) {
-  return;
+  return a ** b;
 }
 
 function subt(a, b) {
-  return;
+  return a - b;
 }
+
+const add2 = (a, b) => a + b;
+const divide2 = (a, b) => a / b;
+const multiply2 = (a, b) => a * b;
+const mod2 = (a, b) => a % b;
+const exponent2 = (a, b) => a ** b;
+const subt2 = (a, b) => a - b;
+
+console.log(add2(2, 3));
+console.log(divide2(2, 3));
+console.log(multiply2(2, 3));
+console.log(exponent2(2, 3));
+console.log(mod2(2, 3));
+console.log(subt2(2, 3));
