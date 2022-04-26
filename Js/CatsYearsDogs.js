@@ -30,8 +30,54 @@ http://www.slate.com/articles/news_and_politics/explainer/2009/05/a_dogs_life.ht
 */
 
 const humanYearsCatYearsDogYears = (humanYears) => {
-  // Your code here!
-  return [0, 0, 0];
+  let result;
+  let cat;
+  let dog;
+  switch (humanYears) {
+    case 1:
+      if (humanYears === 1) {
+        cat = 15;
+        dog = 15;
+        result = [humanYears, cat, dog];
+        console.log(`case1 : ${result}`);
+      }
+
+      break;
+    case 2:
+      if (humanYears === 2) {
+        cat = 24;
+        dog = 24;
+        result = [humanYears, cat, dog];
+        console.log(`case2 : ${result}`);
+      }
+      break;
+    default:
+      if (humanYears >= 3) {
+        cat = 24 + (humanYears - 2) * 4;
+        dog = 24 + (humanYears - 2) * 5;
+        result = [humanYears, cat, dog];
+        console.log(`case3 : ${result}`);
+      }
+      break;
+  }
+
+  return result;
 };
 
-console.log(humanYearsCatYearsDogYears(10));
+console.log(humanYearsCatYearsDogYears(3));
+
+// Second solution
+
+const humanYearsCatYearsDogYears = function (y) {
+  if (y == 1) return [1, 15, 15];
+  if (y == 2) return [2, 24, 24];
+  return [y, (y - 2) * 4 + 24, (y - 2) * 5 + 24];
+};
+
+// third Solution
+
+const humanYearsCatYearsDogYears = (humanYears) => [
+  humanYears,
+  (humanYears - 1 ? 16 : 11) + 4 * humanYears,
+  (humanYears - 1 ? 14 : 10) + 5 * humanYears,
+];
