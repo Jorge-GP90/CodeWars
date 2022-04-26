@@ -39,6 +39,7 @@ const humanYearsCatYearsDogYears = (humanYears) => {
         cat = 15;
         dog = 15;
         result = [humanYears, cat, dog];
+        console.log(`case1 : ${result}`);
       }
 
       break;
@@ -47,20 +48,36 @@ const humanYearsCatYearsDogYears = (humanYears) => {
         cat = 24;
         dog = 24;
         result = [humanYears, cat, dog];
+        console.log(`case2 : ${result}`);
       }
       break;
-    case humanYears >= 3:
+    default:
       if (humanYears >= 3) {
         cat = 24 + (humanYears - 2) * 4;
         dog = 24 + (humanYears - 2) * 5;
         result = [humanYears, cat, dog];
+        console.log(`case3 : ${result}`);
       }
       break;
-    default:
-      result = undefined;
   }
 
   return result;
 };
 
-console.log(humanYearsCatYearsDogYears(10));
+console.log(humanYearsCatYearsDogYears(3));
+
+// Second solution
+
+const humanYearsCatYearsDogYears = function (y) {
+  if (y == 1) return [1, 15, 15];
+  if (y == 2) return [2, 24, 24];
+  return [y, (y - 2) * 4 + 24, (y - 2) * 5 + 24];
+};
+
+// third Solution
+
+const humanYearsCatYearsDogYears = (humanYears) => [
+  humanYears,
+  (humanYears - 1 ? 16 : 11) + 4 * humanYears,
+  (humanYears - 1 ? 14 : 10) + 5 * humanYears,
+];
