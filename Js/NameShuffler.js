@@ -15,17 +15,17 @@ console.log(nameShuffler("john McClane"));
 
 // Second solution
 
-function nameSuffle(str) {
+function nameSuffle2(str) {
   return str.split(" ").reverse().join(" ");
 }
 
 //   third solution
-const nameShuffler = (str) => {
+const nameShuffler3 = (str) => {
   str.replace(/([^\s]+) ([^\s]+)/, `$2 $1`);
 };
 
 // fourth solution
-function nameSuffle(str) {
+function nameSuffle4(str) {
   var arr = str.split(" ");
   return arr[1] + " " + arr[0];
 }

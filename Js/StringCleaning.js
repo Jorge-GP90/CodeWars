@@ -9,7 +9,17 @@ Your harried co-workers are looking to you for a solution to take this garbled t
 */
 
 const stringClean = (s) => {
-    return s.map((rem)=> {
-        rem !== 
-    });
-  }
+  return s.replace(/[0-9]/g, "");
+};
+
+console.log(stringClean("This looks5 grea8t!"));
+
+//  second solution
+
+const stringClean2 = (s) => s.replace(/\d/g, "");
+
+// third solution
+
+function stringClean3(s) {
+  return s.replace(/\d/g, "");
+}
