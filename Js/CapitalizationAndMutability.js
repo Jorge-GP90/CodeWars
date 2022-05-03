@@ -7,6 +7,22 @@ Don't worry about numbers, special characters, or non-string types being passed 
 */
 
 function capitalizeWord(word) {
-  word[0].toUpperCase();
-  return word;
+  return word[0].toUpperCase() + [...word].slice(1).join("");
 }
+
+console.log(capitalizeWord("hello"));
+
+// second solution
+
+const capitalizeWord2 = (word) => word[0].toUpperCase() + word.slice(1);
+
+// third solution
+const capitalizeWord3 = (word) =>
+  word.replace(word.charAt(0), word.charAt(0).toUpperCase());
+
+// fourth solution
+const capitalizeWord4 = (word) =>
+  word.replace(/^\w/, (val) => val.toUpperCase());
+
+// fifth solution
+const capitalizeWord5 = (w) => `${w[0].toUpperCase()}${w.slice(1)}`;
