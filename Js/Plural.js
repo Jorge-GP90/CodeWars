@@ -6,6 +6,25 @@ You only need to worry about english grammar rules for this kata, where anything
 All values will be positive integers or floats, or zero.
 */
 
-function plural(n) {
-  // ...
+const plural = (n) => {
+  return n != 1 ? true : false;
+};
+
+console.log(plural(0.5));
+
+// second solution
+function plural2(n) {
+  return n !== 1;
+}
+
+// third solution
+
+function plural3(n) {
+  if (n >= 0) {
+    if (n == 1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
