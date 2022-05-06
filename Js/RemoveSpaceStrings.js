@@ -6,4 +6,8 @@
  
  */
 
-function noSpace(x) {}
+function noSpace(x) {
+  return [...x].map((x) => [...x].join("")).join("");
+}
+
+console.log(noSpace("1,  2,  3"));
