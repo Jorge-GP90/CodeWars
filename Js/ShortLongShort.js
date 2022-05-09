@@ -13,6 +13,57 @@ For example: (Input1, Input2) --> output
 
 */
 
-function solution(a, b) {
-  // your code here
+const solution = (a, b) => {
+  console.log(a.length);
+  console.log(b.length);
+  const shortb = [a, b, a].join("");
+  const shorta = [b, a, b].join("");
+  console.log(shorta);
+  console.log(shortb);
+  let result = `${a.length > b.lenght ? shortb : shorta}`;
+  return result;
+};
+
+// console.log(solution("13", "200"));
+
+const solution2 = (a, b) => {
+  const shorta = [b, a, b].join("");
+  const shortb = [a, b, a].join("");
+  if (a.lenght > b.lenght) {
+    return shortb;
+  }
+  return shorta;
+};
+
+console.log(solution2("13", "200"));
+
+// third solution
+
+function solution3(a, b) {
+  return a.length < b.length ? a + b + a : b + a + b;
 }
+
+// fourth solution
+
+// Using if...else, explicit block syntax
+function solution(a, b) {
+  if (a.length < b.length) {
+    return a + b + a;
+  } else {
+    return b + a + b;
+  }
+}
+
+// Using if..., implicit else, compressed syntax
+function solution(a, b) {
+  if (a.length < b.length) return a + b + a;
+  return b + a + b;
+}
+
+// Using ternary conditional operator
+function solution(a, b) {
+  return a.length < b.length ? a + b + a : b + a + b;
+}
+
+// ES6 arrow function
+var solution = (a, b) => (a.length < b.length ? a + b + a : b + a + b);
