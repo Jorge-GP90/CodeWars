@@ -14,5 +14,25 @@ In this kata, the toFreud() function will take a string as its argument, and ret
 */
 
 function toFreud(string) {
-  return result;
+  let res;
+  const w = "sex";
+  const w2 = "sex ";
+  let rep = string.split(" ").length - 1;
+  string !== "" ? (res = w2.repeat(rep) + w) : (res = "");
+  return res;
 }
+
+console.log(toFreud("Hello word hi how are you"));
+
+// Second Solution
+let toFreud2 = (s) => s.replace(/[^ ]+/g, "sex");
+
+// third Solution
+
+const toFreud3 = (str) =>
+  str === ""
+    ? ""
+    : str
+        .split(" ")
+        .map((e) => "sex")
+        .join(" ");
