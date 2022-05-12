@@ -11,6 +11,23 @@ Assume the test input string is always a valid string. For example, the test inp
 
 
 */
-function getAge(inputString) {
-  // return the girl's correct age as an integer.
+function getAge(age) {
+  const val = [...age];
+  return parseInt(val[0]);
+}
+
+console.log(getAge("1 year old"));
+
+// Second solution
+function getAge2(inputString) {
+  return inputString.match(/[0-9]/)[0] * 1;
+}
+
+// third Solution
+
+function getAge3(inputString) {
+  let res = inputString.split(" ");
+  for (let i of res) {
+    return i != NaN ? +i : "";
+  }
 }
