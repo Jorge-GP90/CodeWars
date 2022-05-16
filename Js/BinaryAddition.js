@@ -10,33 +10,30 @@ Examples:(Input1, Input2 --> Output (explanation)))
 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
 
 */
-
+// first solution
 const addBinary = (a, b) => {
-  a &= b;
-  console.log(a);
-  return (a >>> 0).toString(2);
+  return (a + b).toString(2);
 };
 
 console.log(addBinary(1, 2));
 
-const decToBin = (dec) => {
-  let bin = "";
-  let f = false;
+// second solution
+function decimalToBinary2(decimal) {
+  return (decimal >>> 0).toString(2);
+}
 
-  while (!f) {
-    bin = bin + (dec % 2);
-    dec = Math.trunc(dec / 2);
+function addBinary2(a, b) {
+  return decimalToBinary2(a + b);
+}
 
-    if (dec === 0) f = true;
+// third solution
+
+function addBinary3(a, b) {
+  var c = a + b;
+  var res = "";
+  while (c >= 1) {
+    var res = (c % 2) + res;
+    c = Math.floor(c / 2);
   }
-
-  return bin.split("").reverse().join("");
-};
-
-console.log(decToBin(0));
-console.log(decToBin(1));
-console.log(decToBin(2));
-console.log(decToBin(3));
-console.log(decToBin(4));
-console.log(decToBin(5));
-console.log(decToBin(6));
+  return res;
+}
