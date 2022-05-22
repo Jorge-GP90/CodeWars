@@ -12,5 +12,33 @@ Calculate the distance between the first and the last pillar in centimeters (wit
 */
 
 const pillars = (num_pill, dist, width) => {
-  // your code here
+  if (num_pill < 1) {
+    return "insert a valid number of pillars";
+  }
+  if (num_pill === 1) {
+    return 0;
+  }
+  let init_d = num_pill - 1;
+  const dist_cm = dist * 100;
+  console.log(dist_cm);
+  let w = width;
+  const total_w = width * init_d;
+  console.log(total_w);
+  const res_w = total_w - w;
+  let res = dist_cm * init_d + res_w;
+  return res;
 };
+
+console.log(pillars(2, 20, 25));
+
+// Second solution
+function pillars2(num_pill, dist, width) {
+  // your code here
+  return num_pill > 1
+    ? (num_pill - 1) * dist * 100 + (num_pill - 2) * width
+    : 0;
+}
+
+// third solution
+const pillars3 = (n, d, w) =>
+  Math.max(0, n - 1) * (d * 100) + Math.max(0, n - 2) * w;
