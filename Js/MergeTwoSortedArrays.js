@@ -18,4 +18,28 @@ Examples (input -> output)
 
 */
 
-function mergeArrays(arr1, arr2) {}
+const mergeArrays = (arr1, arr2) => {
+  let total_arr = arr1.concat(arr2).sort(function (a, b) {
+    return a - b;
+  });
+  let total = [...new Set(total_arr)];
+
+  return total;
+};
+
+console.log(mergeArrays([1, 2, 9, 4], [3, 6, 7, 8]));
+
+// second solution
+
+function mergeArrays2(arr1, arr2) {
+  return Array.from(new Set(arr1.concat(arr2).sort((a, b) => a - b)));
+}
+
+// Third solution
+function mergeArrays3(a, b) {
+  return [...new Set(a.concat(b))].sort((a, b) => a - b);
+}
+
+// fourth solution
+
+let mergeArrays = (a, b) => [...new Set([...a, ...b])].sort((a, b) => a - b);
