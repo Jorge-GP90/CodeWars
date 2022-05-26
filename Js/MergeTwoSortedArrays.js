@@ -42,4 +42,4 @@ function mergeArrays3(a, b) {
 
 // fourth solution
 
-let mergeArrays = (a, b) => [...new Set([...a, ...b])].sort((a, b) => a - b);
+let mergeArrays4 = (a, b) => [...new Set([...a, ...b])].sort((a, b) => a - b);
