@@ -9,5 +9,7 @@ Example
 */
 
 function smash(words) {
-  return "";
+  return `${[words].concat()}`;
 }
+
+console.log(smash(["hello", "amazing", "world"]));
