@@ -9,7 +9,35 @@ Example
 */
 
 function smash(words) {
-  return `${[words].concat()}`;
+  return `${[words].join("").replace(/,/g, " ")}`;
 }
 
 console.log(smash(["hello", "amazing", "world"]));
+
+// Second solution
+
+function smash2(words) {
+  "use strict";
+  return words.join(" ");
+}
+
+// Third solution
+
+function smash3(words) {
+  "use strict";
+  return words.join(" ").trim();
+}
+
+// Fourth Solution
+
+function smash4(words) {
+  "use strict";
+  var smashed = "";
+  for (var i = 0; i < words.length; i++) {
+    smashed += words[i];
+    if (i != words.length - 1) {
+      smashed += " ";
+    }
+  }
+  return smashed;
+}
