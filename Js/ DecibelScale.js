@@ -25,4 +25,20 @@ Results are automatically rounded to the nearest integer by the test cases.
 
 */
 
-function dBScale(intensity) {}
+function dBScale(intensity) {
+  return 10 * Math.log10(intensity / 1e-12);
+}
+
+console.log(dBScale(10));
+
+// Second Solution
+
+const dBScale2 = (intensity) => 10 * (12 + Math.log10(intensity));
+
+// third solution
+
+const dBScale3 = (i) => 10 * Math.log10(i / Math.pow(10, -12));
+
+// fourth solution
+
+const dBScale4 = (intensity) => 10 * Math.log10(intensity) + 120;
