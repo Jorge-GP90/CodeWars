@@ -13,5 +13,6 @@ Examples:
   */
 
 function hello(name) {
-  return "";
+  return ` Hello ${name === "" ? "Word" : name === undefined ? "Word" : name}!`;
 }
+console.log(hello());
