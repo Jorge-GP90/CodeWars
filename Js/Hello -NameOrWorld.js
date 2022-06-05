@@ -13,6 +13,10 @@ Examples:
   */
 
 function hello(name) {
-  return ` Hello ${name === "" ? "Word" : name === undefined ? "Word" : name}!`;
+  const lc = name.toLowerCase();
+  const name2 = lc.charAt(0).toUpperCase() + lc.slice(1);
+  return ` Hello, ${
+    name2 === "" ? "Word" : name2 === undefined ? "Word" : name2
+  }!`;
 }
 console.log(hello());
