@@ -15,5 +15,19 @@ Zero (0) is not checked for any specific sign. Negative zeros make no mathematic
 */
 
 function makeNegative(num) {
-  // Code?
+  return num < 0 ? num : -num;
+}
+
+console.log(makeNegative(5));
+
+// second solution
+
+const makeNegative2 = (num) => {
+  return -Math.abs(num);
+};
+
+// third solution
+
+function makeNegative3(num) {
+  return num <= 0 ? num : num * -1;
 }
