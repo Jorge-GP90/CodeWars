@@ -15,5 +15,32 @@ The answer should be rounded to the nearest 2 decimal places.
 */
 
 function howMuchWater(water, load, clothes) {
-  // Insert your brilliant code here
+  if (clothes > 2 * load) return "Too much clothes";
+  if (clothes < load) return "Not enough clothes";
+  const balance = clothes - load;
+  const calc = Math.pow(1.1, balance);
+  const TotalWater = water * calc;
+  return parseFloat(TotalWater.toFixed(2));
 }
+
+console.log(howMuchWater(10, 10, 21));
+console.log(howMuchWater(10, 10, 2));
+console.log(howMuchWater(10, 11, 20));
+console.log(howMuchWater(50, 15, 29));
+
+// Second Solution
+
+function howMuchWater2(L, X, N) {
+  if (N > 2 * X) return "Too much clothes";
+  if (N < X) return "Not enough clothes";
+  return +(L * 1.1 ** (N - X)).toFixed(2);
+}
+
+// third Solution
+
+const howMuchWater3 = (water, load, clothes) =>
+  clothes < load
+    ? `Not enough clothes`
+    : clothes > 2 * load
+    ? `Too much clothes`
+    : Math.round(water * 1.1 ** (clothes - load) * 1e2) / 1e2;
