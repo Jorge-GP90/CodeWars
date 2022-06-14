@@ -13,5 +13,23 @@ Expect large Inputs!
 */
 
 function oddCount(n) {
-  // your code here
+  return Math.floor(n / 2);
+}
+
+console.log(oddCount(7));
+
+// Second solution
+
+function oddCount2(n) {
+  return parseInt(n / 2);
+}
+
+// third Solution
+
+const oddCount3 = (n) => Math.floor(n / 2);
+
+// Fourth Solution with Negative
+
+function oddCount4(n) {
+  return n > 0 ? Math.trunc(n / 2) : -Math.trunc(n / 2);
 }
