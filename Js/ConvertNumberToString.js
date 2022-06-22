@@ -11,6 +11,24 @@ Examples:
 
 */
 
-function numberToString(num) {
-  // Return a string of the number here!
+const numberToString = (num) => `${num}`;
+
+console.log(numberToString(123));
+
+// Second solution
+
+function numberToString2(num) {
+  return num.toString();
+}
+
+// Third Solution
+
+function numberToString3(num) {
+  return String(num);
+}
+
+// fourth solution
+
+function numberToString4(num) {
+  return "" + num;
 }
