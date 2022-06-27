@@ -29,5 +29,7 @@ result - division by zero (refer to the specifications on how to handle this in 
 */
 
 function remainder(n, m) {
-  // Divide the larger argument by the smaller argument and return the remainder
+  return n === 0 || m === 0 ? `NaN` : Math.abs(n) % Math.abs(m);
 }
+
+console.log(remainder(13, 72));
