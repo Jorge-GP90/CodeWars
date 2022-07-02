@@ -29,4 +29,26 @@ If you make it, return "Alive!", if not, return "Shark Bait!".
 
 */
 
-function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {}
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {
+  if (dolphin) {
+    sharkSpeed /= 2;
+  }
+  return pontoonDistance / youSpeed < sharkDistance / sharkSpeed
+    ? "Alive!"
+    : "Shark Bait!";
+}
+
+console.log(shark(12, 50, 4, 8, true));
+
+const shark2 = (
+  pontoonDistance,
+  sharkDistance,
+  youSpeed,
+  sharkSpeed,
+  dolphin
+) => {
+  let youTime = pontoonDistance / youSpeed;
+  let sharkTime = sharkDistance / (dolphin ? sharkSpeed / 2 : sharkSpeed);
+
+  return sharkTime < youTime ? "Shark Bait!" : "Alive!";
+};
